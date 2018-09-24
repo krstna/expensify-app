@@ -7,6 +7,7 @@ import configureStore from './store/configureStore';
 import 'normalize.css/normalize.css';
 import './styles/style.scss';
 import 'react-dates/lib/css/_datepicker.css';
+import './firebase/firebase';
 
 import {addExpense, removeExpense, editExpense} from './actions/expenses'
 import {setTextFilter, sortByAmount} from './actions/filters';
