@@ -31,7 +31,7 @@ export const startAddExpense = (expenseData = {})=>{
 //REMOVE_EXPENSE
 
 export const removeExpense = ({id} = {}) => ({
-    type: 'REMOVE_EXPENSES',
+    type: 'REMOVE_EXPENSE',
     id
 });
 
@@ -39,9 +39,7 @@ export const startRemoveExpenses = ({id} = {}) => {
     return (dispatch, getState) => {
         const uid = getState().auth.uid;
         return database.ref(`users/${uid}/expenses/${id}`).remove().then(() => {
-            dispatch(removeExpense({
-                id
-            }));
+            dispatch(removeExpense({id}));
         });
     }
 };
